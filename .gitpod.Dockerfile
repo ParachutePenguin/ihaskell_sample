@@ -1,6 +1,8 @@
 FROM gitpod/workspace-full
 USER gitpod
 
+ENV PATH=/home/gitpod/.local/bin:$PATH
+
 RUN sudo apt-get install -y python3-pip git libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libmagic-dev libblas-dev liblapack-dev
 RUN sudo apt update -y && sudo apt upgrade -y
 RUN brew install haskell-stack
@@ -10,8 +12,6 @@ RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
     && stack install haskell-ide-engine \
     && cd .. \
     && rm -rf haskell-ide-engine
-    
-ENV PATH=/home/gitpod/.local/bin:$PATH
     
 RUN git clone https://github.com/gibiansky/IHaskell \
     && sudo apt update -y && sudo apt upgrade -y \
