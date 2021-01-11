@@ -14,6 +14,7 @@ RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
 ENV PATH=/home/gitpod/.local/bin:$PATH
     
 RUN git clone https://github.com/gibiansky/IHaskell \
+    && sudo apt update -y && sudo apt upgrade -y \
     && cd IHaskell \
     && pip3 install -r requirements.txt
 RUN ihaskell install --stack
