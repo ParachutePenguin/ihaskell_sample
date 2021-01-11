@@ -16,6 +16,9 @@ RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
 RUN git clone https://github.com/gibiansky/IHaskell \
     && sudo apt update -y && sudo apt upgrade -y \
     && cd IHaskell \
-    && pip3 install -r requirements.txt
+    && python3 -m venv .venv \
+    && source .venv/bin/activate \
+    && python -m pip install requirements.txt
+    
 RUN ihaskell install --stack
 RUN jupyter labextension install jupyterlab-ihaskell
