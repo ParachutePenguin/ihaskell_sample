@@ -1,9 +1,6 @@
 image:
   file: .gitpod.Dockerfile
   
-tasks:
-  - init: cabal update && cabal install unordered-containers
-
  vscode:
    extensions:
      - alanz.vscode-hie-server@0.0.28:j/YAJtXUGGbb8xSSz1i/CQ==
