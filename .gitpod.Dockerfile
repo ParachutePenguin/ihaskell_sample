@@ -15,6 +15,6 @@ ENV PATH=/home/gitpod/.local/bin:$PATH
     
 RUN git clone https://github.com/gibiansky/IHaskell \
     && cd IHaskell \
-    && python -m pip install requirements.txt
+    && pip3 install -r requirements.txt
 RUN ihaskell install --stack
 RUN jupyter labextension install jupyterlab-ihaskell
