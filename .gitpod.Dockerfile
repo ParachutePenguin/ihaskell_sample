@@ -12,7 +12,8 @@ RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
     && stack install haskell-ide-engine \
     && cd .. \
     && rm -rf haskell-ide-engine
-    
+
+RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN git clone https://github.com/gibiansky/IHaskell \
     && sudo apt update -y && sudo apt upgrade -y \
     && cd IHaskell \
