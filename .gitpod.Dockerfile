@@ -9,7 +9,7 @@ RUN sudo apt-get install -y python3-pip git libtinfo-dev libzmq3-dev libcairo2-d
 
 RUN sudo apt update -y && sudo apt upgrade -y
 
-RUN curl -sSL https://get.haskellstack.org/ | sh
+RUN sudo curl -sSL https://get.haskellstack.org/ | sh
 
 RUN git clone https://github.com/gibiansky/IHaskell \
     && cd IHaskell \
